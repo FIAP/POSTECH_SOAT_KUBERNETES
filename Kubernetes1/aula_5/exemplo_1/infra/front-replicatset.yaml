@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: flusite-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fiap-site-replica
+  template:
+    metadata:
+      labels:
+        app: fiap-site-replica
+    spec:
+      containers:
+      - name: flusite-container
+        image: tadrianonet/flusite
+        ports:
+        - containerPort: 80

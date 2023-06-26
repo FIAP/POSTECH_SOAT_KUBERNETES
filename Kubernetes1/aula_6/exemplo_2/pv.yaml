@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fiap-pv
+  labels:
+    name: fiap-pv
+spec:
+  capacity:
+    storage: 5Mi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage  
+  persistentVolumeReclaimPolicy: Retain 
+  hostPath:
+    path: /Users/thiagoadriano/Documents/curso_kubernetes/aula_6/exemplo_2/data

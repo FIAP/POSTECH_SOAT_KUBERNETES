@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fiap-pv-scraping
+  labels:
+    name: fiap-pv-scraping
+spec:
+  capacity:
+    storage: 10Mi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-db
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /Users/thiagoadriano/Documents/curso_kubernetes/aula_9/exemplo_2/exemplo_2/data

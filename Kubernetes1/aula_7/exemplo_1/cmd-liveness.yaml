@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pageexample
+  labels:
+    app: pageexample
+spec:
+  containers:
+  - name: c-pageexample
+    image: tadrianonet/pageexample
+    livenessProbe:
+      exec:
+        command:
+        - ls
+        - /var/www/html
+      initialDelaySeconds: 10
+      periodSeconds: 30

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fiap-game-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fiap-game
+  template:
+    metadata:
+      labels:
+        app: fiap-game
+    spec:
+      containers:
+      - name: c-fiap-game
+        image: tadrianonet/shima-image:v1
+        ports:
+        - containerPort: 80

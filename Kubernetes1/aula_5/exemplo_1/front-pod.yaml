@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-site-replica
+  labels:
+    app: fiap-site-replica
+spec:
+  containers:
+    - name: c-fiap-adm-replica
+      image: tadrianonet/flusite  

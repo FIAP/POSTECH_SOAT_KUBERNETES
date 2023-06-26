@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exemplo-liveness-tcp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meu-app
+  template:
+    metadata:
+      labels:
+        app: meu-app
+    spec:
+      containers:
+      - name: meu-container
+        image: minha-imagem
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 20

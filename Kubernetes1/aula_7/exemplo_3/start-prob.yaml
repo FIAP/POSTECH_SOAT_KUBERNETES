@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-probe-start
+spec:
+  containers:
+    - name: c-probe-start
+      image: tadrianonet/configmap:v10
+      startupProbe:
+        httpGet:
+          path: /health
+          port: 3000
+        failureThreshold: 3
+        periodSeconds: 10

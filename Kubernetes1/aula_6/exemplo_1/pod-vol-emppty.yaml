@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-empty-vol
+  labels:
+    name:  pod-empty-vol
+spec:
+  containers:
+    - name: c-frontend-vol
+      image: tadrianonet/volempty
+      volumeMounts:
+        - name: cdn
+          mountPath: /usr/share/nginx/html/images
+  volumes:
+    - name: cdn
+      emptyDir: {}

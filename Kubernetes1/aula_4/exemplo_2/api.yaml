@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-api-config
+spec:
+  containers:
+  - name: api-configmap
+    image: tadrianonet/configmap:v9
+    ports:
+    - containerPort: 3000

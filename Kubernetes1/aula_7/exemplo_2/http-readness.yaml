@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiap-http-readness
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fiap-http-readness
+  template:
+    metadata:
+      labels:
+        app: fiap-http-readness
+    spec:
+      containers:
+      - name: c-container
+        image: tadrianonet/configmap:v10
+        ports:
+        - containerPort: 3000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 40
+          failureThreshold: 3
+          periodSeconds: 20

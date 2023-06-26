@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-multi-container
+
+spec:
+  containers:
+    - name: nginx-container-1
+      image: nginx
+      volumeMounts:
+        - name: shared-data
+          mountPath: /data   
+  volumes:
+    - name: shared-data
+      hostPath:
+        path: /Users/thiagoadriano/Documents/curso_kubernetes/aula_6/exemplo_1/exemplo_2/data

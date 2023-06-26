@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meu-pod
+spec:
+  containers:
+    - name: meu-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: meu-volume
+          mountPath: /var/www/html
+  volumes:
+    - name: meu-volume
+      persistentVolumeClaim:
+        claimName: meu-pvc

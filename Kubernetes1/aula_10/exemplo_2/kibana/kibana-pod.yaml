@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana-pod
+  labels:
+    app: kibana-pod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kibana-pod
+  template:
+    metadata:
+      labels:
+        app: kibana-pod
+    spec:
+      containers:
+      - name: c-kibana
+        image: docker.elastic.co/kibana/kibana:7.2.0
+        env:
+          - name: ELASTICSEARCH_URL
+            value: http://elastic-svc:9200
+        ports:
+        - containerPort: 5601

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fluentd-pod
+spec:
+  containers:
+    - name: fluentd-container
+      image: tadrianonet/fluentd
+      ports:
+        - containerPort: 24224
+          protocol: TCP
+        - containerPort: 24224
+          protocol: UDP
+      volumeMounts:
+        - name: fluentd-conf
+          mountPath: /fluentd/etc
+  volumes:
+    - name: fluentd-conf
+      hostPath:
+        path: /Users/thiagoadriano/Documents/curso_kubernetes/aula_10/exemplo_2/fluentd/conf

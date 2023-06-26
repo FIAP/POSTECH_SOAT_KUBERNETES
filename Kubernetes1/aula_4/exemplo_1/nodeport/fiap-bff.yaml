@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-aula3bff
+  labels:
+    app: fiap-aula3bff
+spec:
+  containers:
+    - name: fiap-aula3bff
+      image: tadrianonet/aula3bff:v1 
+      ports:
+        - containerPort: 3010

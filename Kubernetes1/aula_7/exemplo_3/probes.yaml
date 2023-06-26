@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiap-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fiap-aplicativo
+  template:
+    metadata:
+      labels:
+        app: fiap-aplicativo
+    spec:
+      containers:
+      - name: fiap-aplicativo
+        image: tadrianonet/configmap:v10
+        ports:
+        - containerPort: 3000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 60
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          failureThreshold: 3
+          periodSeconds: 10

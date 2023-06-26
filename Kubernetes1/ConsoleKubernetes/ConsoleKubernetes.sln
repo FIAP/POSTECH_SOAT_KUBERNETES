@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleKubernetes", "ConsoleKubernetes\ConsoleKubernetes.csproj", "{4B59A9AF-74A9-4D8E-B466-06BDE779F05D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B59A9AF-74A9-4D8E-B466-06BDE779F05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B59A9AF-74A9-4D8E-B466-06BDE779F05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B59A9AF-74A9-4D8E-B466-06BDE779F05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B59A9AF-74A9-4D8E-B466-06BDE779F05D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25640601-2A23-464D-A5D3-5D7934B2719A}
+	EndGlobalSection
+EndGlobal

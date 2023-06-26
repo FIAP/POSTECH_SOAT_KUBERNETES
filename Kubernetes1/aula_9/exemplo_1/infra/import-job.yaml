@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fiap-import
+spec:
+  template:
+    spec:
+      containers:
+      - name: c-import
+        image: tadrianonet/aula9 
+      restartPolicy: Never
+  backoffLimit: 4

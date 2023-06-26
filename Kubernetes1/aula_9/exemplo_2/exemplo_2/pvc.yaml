@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fiap-pvc-scraping
+  labels:
+    name: fiap-pvc-scraping
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi 
+  storageClassName: local-db    

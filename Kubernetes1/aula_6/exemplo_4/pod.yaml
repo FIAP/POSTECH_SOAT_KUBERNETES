@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb-pod
+  labels:
+        app: mongodb-pod
+spec:
+  containers:
+    - name: mongodb
+      image: mongo:4.2.8
+      ports:
+        - containerPort: 27017
+      volumeMounts:
+        - name: shared
+          mountPath: /data/db
+  volumes:
+    - name: shared
+      persistentVolumeClaim:
+        claimName: fiap-pvc-mongo

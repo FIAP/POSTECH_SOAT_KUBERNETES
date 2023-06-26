@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-js
+  labels:
+    app: api-js-redis
+spec:
+  containers:
+    - name: apijslocal
+      image: tadrianonet/apipodjs
+      ports:
+        - containerPort: 3000
+    - name: redis-server
+      image: redis:latest
+      ports:
+        - containerPort: 6379

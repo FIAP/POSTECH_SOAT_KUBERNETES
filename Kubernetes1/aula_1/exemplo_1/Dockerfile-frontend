@@ -1,0 +1,11 @@
+# Use a imagem oficial do Nginx como base
+FROM nginx:stable
+
+# Copie os arquivos estáticos para a pasta padrão do Nginx
+COPY ./frontend /usr/share/nginx/html
+
+# Exponha a porta padrão do Nginx (80)
+EXPOSE 80
+
+# Inicie o servidor Nginx
+CMD ["nginx", "-g", "daemon off;"]

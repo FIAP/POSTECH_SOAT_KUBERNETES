@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-game
+  labels:
+    app: fiap-game
+spec:
+  containers:
+    - name: fiap-game
+      image: tadrianonet/shima-image:v1

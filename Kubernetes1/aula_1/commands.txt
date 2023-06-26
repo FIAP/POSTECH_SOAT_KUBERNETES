@@ -1,0 +1,2 @@
+docker stop $(docker ps -a -q) (stop all containers)
+docker rm $(docker ps -a -q -f status=exited) (delete all stoped)

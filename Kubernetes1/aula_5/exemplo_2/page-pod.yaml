@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiapdeployment
+  labels:
+    app: fiapdeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fiapdeployment
+  template:
+    metadata:
+      labels:
+        app: fiapdeployment
+    spec:
+      containers:
+        - name: c-fiapdeployment
+          image: tadrianonet/pageexample:v1
+          ports:
+            - containerPort: 80

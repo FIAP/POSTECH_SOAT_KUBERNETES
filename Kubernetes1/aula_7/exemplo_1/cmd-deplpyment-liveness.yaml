@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liveness-cmd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pageexample
+  template:
+    metadata:
+      labels:
+        app: pageexample
+    spec:
+      containers:
+      - name: c-pageexmple
+        image: tadrianonet/pageexample
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          exec:
+            command:
+            - ls
+            - /var/www/html
+          initialDelaySeconds: 10
+          periodSeconds: 30

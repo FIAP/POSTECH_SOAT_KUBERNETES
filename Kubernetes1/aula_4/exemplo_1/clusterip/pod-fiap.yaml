@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-svc1
+  labels:
+    app: fiap-svc1
+spec:
+  containers:
+    - name: fiap-c-svc1
+      image: tadrianonet/clusterip  

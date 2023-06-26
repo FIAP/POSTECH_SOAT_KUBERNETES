@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: f-scraping-got
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: c-scraping-got
+            image: tadrianonet/aula9-scraping-got:v1
+            volumeMounts:
+            - name: shared
+              mountPath: /usr/src/app/uploads
+          volumes:
+          - name: shared
+            persistentVolumeClaim:
+              claimName: fiap-pvc-scraping
+          restartPolicy: OnFailure

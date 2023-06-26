@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: ScheduledJob
+metadata:
+  name: my-scheduledjob
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-job-container
+            image: my-job-image
+            command: ["sh", "-c", "echo Hello, ScheduledJob!"]
+          restartPolicy: OnFailure

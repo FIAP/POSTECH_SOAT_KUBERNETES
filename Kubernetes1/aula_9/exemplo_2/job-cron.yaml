@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: example-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: example-container
+            image: busybox
+            command: ["sh", "-c", "echo 'Executando tarefa cron'"]
+          restartPolicy: OnFailure

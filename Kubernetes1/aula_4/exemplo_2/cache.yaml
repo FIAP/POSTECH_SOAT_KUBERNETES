@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-cache
+  labels:
+    app: fiap-cache
+spec:
+  containers:
+    - name: fiap-cache
+      image: redis
+      ports:
+        - containerPort: 6379

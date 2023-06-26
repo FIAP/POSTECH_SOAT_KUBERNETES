@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: meu-pod-curso-k8s
+ labels:
+   app: minha-aplicacao-de-exemplo
+spec:
+ containers:
+ - name: meu-container-k8s
+   image: nginx:latest
+   ports:
+   - containerPort: 80
+     protocol: TCP
+   resources:
+     limits:
+       cpu: "0.5"
+       memory: "512Mi"
+     requests:
+       cpu: "0.2"
+       memory: "256Mi"
+   volumeMounts:
+   - name: meu-volume
+     mountPath: /var/www/html
+ volumes:
+ - name: meu-volume
+   emptyDir: {}

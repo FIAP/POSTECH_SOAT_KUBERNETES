@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-curl
+  labels:
+    app: fiap-curl
+spec:
+  containers:
+    - name: fiap-c-curl
+      image: tadrianonet/clusterip  
