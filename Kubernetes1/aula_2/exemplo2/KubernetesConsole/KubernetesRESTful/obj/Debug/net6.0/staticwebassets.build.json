@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QCOcZqdrbJHSZe3U4n0yFLlOz9tV79jQuXze2xT6pLI=",
+  "Source": "KubernetesRESTful",
+  "BasePath": "_content/KubernetesRESTful",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
