@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/thiagoadriano/Documents/curso_kubernetes/aula_2/exemplo_1/exemplo2/KubernetesConsole/KubernetesRESTful/KubernetesRESTful.csproj": {}
+  },
+  "projects": {
+    "/Users/thiagoadriano/Documents/curso_kubernetes/aula_2/exemplo_1/exemplo2/KubernetesConsole/KubernetesRESTful/KubernetesRESTful.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thiagoadriano/Documents/curso_kubernetes/aula_2/exemplo_1/exemplo2/KubernetesConsole/KubernetesRESTful/KubernetesRESTful.csproj",
+        "projectName": "KubernetesRESTful",
+        "projectPath": "/Users/thiagoadriano/Documents/curso_kubernetes/aula_2/exemplo_1/exemplo2/KubernetesConsole/KubernetesRESTful/KubernetesRESTful.csproj",
+        "packagesPath": "/Users/thiagoadriano/.nuget/packages/",
+        "outputPath": "/Users/thiagoadriano/Documents/curso_kubernetes/aula_2/exemplo_1/exemplo2/KubernetesConsole/KubernetesRESTful/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thiagoadriano/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "KubernetesClient": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

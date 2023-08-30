@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-nodeapi
+  labels:
+    app: fiap-nodeapi
+spec:
+  containers:
+    - name: fiap-nodeapi
+      image: tadrianonet/nodefiapapi:v4
+      ports:
+        - containerPort: 3000

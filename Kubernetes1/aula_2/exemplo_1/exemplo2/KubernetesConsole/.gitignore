@@ -1,0 +1,12 @@
+# .NET
+*.dll
+*.exe
+*.pdb
+*.user
+*.obj
+*.log
+*.vs/
+*.vscode/
+/.vs
+/bin/
+/obj/

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-adm
+  labels:
+    app: fiap-adm
+spec:
+  containers:
+    - name: fiap-adm
+      image: tadrianonet/admfiap:v2 
