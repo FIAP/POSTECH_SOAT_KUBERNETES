@@ -1,0 +1,22 @@
+{
+  "name": "node-parse-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.3",
+    "json2csv": "^4.5.1",
+    "mongoose": "^5.5.6",
+    "request": "^2.88.0",
+    "request-progress": "^3.0.0",
+    "uuid": "^3.3.2"
+  }
+}
