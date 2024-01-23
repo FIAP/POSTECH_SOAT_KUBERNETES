@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apipod
+  labels:
+        app: apipod
+spec:
+  containers:
+  - name: apipod-config
+    image: tadrianonet/configmap:v10
+    ports:
+    - containerPort: 3000

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Endpoint Test</title>
+  <link rel="stylesheet" href="public/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Teste de endpoint</h1>
+    <button id="fetchData">Buscar mensagem</button>
+    <p id="message"></p>
+  </div>
+  <script>
+    document.getElementById('fetchData').addEventListener('click', async () => {
+      const response = await fetch('http://api:3060/api/curso');
+      const data = await response.json();
+      document.getElementById('message').textContent = data.message;
+    });
+  </script>
+</body>
+</html>

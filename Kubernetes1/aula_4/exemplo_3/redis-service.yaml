@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: redis
+  name: redis-nodeport-svc
+spec:
+  ports:
+  - port: 6379
+    protocol: TCP
+    targetPort: 6379
+    nodePort: 32100
+  selector:
+    app: redis-pod
+  type: NodePort

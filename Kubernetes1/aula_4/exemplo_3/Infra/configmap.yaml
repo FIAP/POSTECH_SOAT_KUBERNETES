@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  labels:
+    name: db-config
+data:
+  MONGO_URL: mongodb://mongo-nodeport-svc/db_teste
+  REDIS_URL: redis-nodeport-svc

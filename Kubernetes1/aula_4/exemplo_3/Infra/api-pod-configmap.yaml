@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apipod
+  labels:
+    app: apipod
+spec:
+  containers:
+  - name: apipod-config
+    image: tadrianonet/nodemongoredis
+    ports:
+    - containerPort: 3000
+    env:
+      - name: MONGO_URL
+        valueFrom:
+          configMapKeyRef:
+            name: db-config
+            key: MONGO_URL
+      - name: REDIS_URL
+        valueFrom:
+          configMapKeyRef:
+            name: db-config
+            key: REDIS_URL
