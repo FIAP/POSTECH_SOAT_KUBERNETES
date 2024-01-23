@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Kubernetes FIAP</title>
+    <style >
+        .form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+    </style>
+    <script>
+        function sendForm() {
+            event.preventDefault();
+
+            const form = document.getElementById('myForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const birthday = document.getElementById('dataNascimento').value;
+
+            axios.post('http://localhost:3000/cadastrar', {
+                    name,
+                    email,
+                    birthday
+                })
+                .then(function(response) {
+                    console.log('Dados enviados com sucesso:', response.data);
+                    alert(JSON.stringify(response.data));
+                })
+                .catch(function(error) {
+                    console.error('Erro ao enviar os dados:', error);
+                    alert('Erro ao enviar os dados!');
+
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Curso Kubernetes FIAP</h2>
+        <form id="myForm">
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" value="" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" value="" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="text" id="dataNascimento" name="dataNascimento" required>
+            </div>
+            <button type="submit" onclick="sendForm()" id="submitBtn">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
