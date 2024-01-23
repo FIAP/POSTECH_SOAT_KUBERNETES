@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Kubernetes Dashboard</h1>
+    <div id="dashboard">
+        <button id="buscarEventos">Buscar Eventos</button>
+        <button id="buscarDescricaoDePod">Buscar Descrição de Pod</button>
+        <button id="buscarPods">Buscar Pods</button>
+        <button id="buscarServices">Buscar Services</button>
+        <button id="buscarNomeDeContainers">Buscar Nome de Containers</button>
+        <button id="buscarServiceDetails">Buscar Detalhes do Service</button>
+        <button id="GetNodeAndNamespacesInfo">Buscar Informação dos Nodes e NameSpaces</button>
+
+    </div>
+    <div style="text-align: center;">
+        <div id="inputFields">
+            <input type="text" id="podName" placeholder="Nome do Pod">
+            <input type="text" id="serviceName" placeholder="Nome do Service">
+        </div>
+        <div id="result">
+            <pre id="output"></pre>
+        </div>
+    </div>
+    <script>
+        const apiUrl = 'http://localhost:5228'; // Substitua pelo domínio da sua API.
+
+        function handleResponse(response) {
+            $('#output').text(JSON.stringify(response, null, 2));
+        }
+
+        $('#buscarEventos').on('click', () => {
+            $.get(`${apiUrl}/Kubernetes/BuscarEventos`, handleResponse);
+        });
+
+        $('#buscarDescricaoDePod').on('click', () => {
+            const podName = $('#podName').val();
+            $.get(`${apiUrl}/Kubernetes/BuscarDescricaoDePod?podName=${podName}`, handleResponse);
+        });
+
+        $('#buscarPods').on('click', () => {
+            $.get(`${apiUrl}/Kubernetes/BuscarPods`, handleResponse);
+        });
+
+        $('#buscarServices').on('click', () => {
+            $.get(`${apiUrl}/Kubernetes/BuscarServices`, handleResponse);
+        });
+
+        $('#buscarNomeDeContainers').on('click', () => {
+            const podName = $('#podName').val();
+            $.get(`${apiUrl}/Kubernetes/BuscarNomeDeContainers?podName=${podName}`, handleResponse);
+        });
+
+        $('#buscarServiceDetails').on('click', () => {
+            const serviceName = $('#serviceName').val();
+            $.get(`${apiUrl}/Kubernetes/BuscarServiceDetails?serviceName=${serviceName}`, handleResponse);
+        });
+
+        $('#GetNodeAndNamespacesInfo').on('click', () => {
+            $.get(`${apiUrl}/Kubernetes/BuscarNodesENamespacesInfo`, handleResponse);
+        });
+
+
+    </script>
+</body>
+
+</html>

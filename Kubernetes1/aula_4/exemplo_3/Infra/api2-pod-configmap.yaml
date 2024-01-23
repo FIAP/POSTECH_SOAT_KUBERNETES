@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api2-pod
+  labels:
+    app: api2-pod
+spec:
+  containers:
+    - name: api2-pod-config
+      image: tadrianonet/nodemongo
+      ports:
+        - containerPort: 3000
+      env:
+        - name: MONGO_URL
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: MONGO_URL
